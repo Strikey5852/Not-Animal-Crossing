@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "mobcrossing:block/weed_stage2_top"
+  }
+}

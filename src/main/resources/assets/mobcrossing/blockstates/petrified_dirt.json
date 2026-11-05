@@ -1,0 +1,43 @@
+{
+  "multipart": [
+    {
+      "apply": { "model": "mobcrossing:block/petrified_dirt" },
+      "when": {
+        "stage": "normal"
+      }
+    },
+    {
+      "apply": { "model": "mobcrossing:block/petrified_dirt_growing" },
+      "when": {
+        "stage": "growing"
+      }
+    },
+    {
+      "apply": { "model": "mobcrossing:block/petrified_dirt_grown_dusted0" },
+      "when": {
+        "stage": "grown",
+        "dusted": "0"
+      }
+    },
+    {
+      "apply": { "model": "mobcrossing:block/petrified_dirt_grown_dusted1" },
+      "when": {
+        "stage": "grown",
+        "dusted": "1"
+      }
+    },
+    {
+      "apply": { "model": "mobcrossing:block/petrified_dirt_grown_dusted2" },
+      "when": {
+        "stage": "grown",
+        "dusted": "2"
+      }
+    },
+    {
+      "apply": { "model": "mobcrossing:block/petrified_dirt_hole" },
+      "when": {
+        "stage": "hole"
+      }
+    }
+  ]
+}

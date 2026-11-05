@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "mobcrossing:block/petrified_dirt_top",
+    "side": "mobcrossing:block/petrified_dirt_side"
+  }
+}

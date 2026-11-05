@@ -1,0 +1,28 @@
+{
+  "multipart": [
+    {
+      "apply": { "model": "mobcrossing:block/weed_stage0" },
+      "when": {
+        "age": "0"
+      }
+    },
+    {
+      "apply": { "model": "mobcrossing:block/weed_stage1" },
+      "when": {
+        "age": "1"
+      }
+    },
+    {
+      "apply": { "model": "mobcrossing:block/weed_stage2_base" },
+      "when": {
+        "age": "2"
+      }
+    },
+    {
+      "apply": { "model": "mobcrossing:block/weed_stage2_top" },
+      "when": {
+        "age": "2"
+      }
+    }
+  ]
+}

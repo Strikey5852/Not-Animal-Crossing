@@ -1,0 +1,60 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "mobcrossing:weed",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "age": "0"
+                  }
+                }
+              ],
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "mobcrossing:weed",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "age": "1"
+                  }
+                }
+              ],
+              "count": 2.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "mobcrossing:weed",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "age": "2"
+                  }
+                }
+              ],
+              "count": 3.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "mobcrossing:weed"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "mobcrossing:blocks/weed"
+}
