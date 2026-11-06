@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.block.SoundType;
 
 public class PetrifiedDirtBlock extends Block implements EntityBlock {
     public static final EnumProperty<PetrifiedDirtStage> STAGE = EnumProperty.create("stage", PetrifiedDirtStage.class);
@@ -24,6 +25,7 @@ public class PetrifiedDirtBlock extends Block implements EntityBlock {
         super(BlockBehaviour.Properties.of()
                 .mapColor(MapColor.DIRT)
                 .strength(0.5F)
+                .sound(SoundType.PACKED_MUD)
                 .randomTicks());
         this.registerDefaultState(this.defaultBlockState().setValue(STAGE, PetrifiedDirtStage.NORMAL));
     }
