@@ -1,7 +1,6 @@
 package com.mob.crossing.block;
 
 import com.mob.crossing.MobCrossing;
-import com.mob.crossing.item.FossilItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.EntityType;
@@ -49,24 +48,5 @@ public class PetrifiedDirtBlockEntity extends BlockEntity {
 
     public int getBrushCount() {
         return brushCount;
-    }
-
-    public void spawnFossil() {
-        if (level == null || level.getServer() == null || level.isClientSide()) {
-            return;
-        }
-
-        ItemStack fossil = new ItemStack(MobCrossing.FOSSIL.get());
-        double d0 = EntityType.ITEM.getWidth();
-        double d1 = 1.0 - d0;
-        double d2 = d0 / 2.0;
-        Direction direction = Direction.UP;
-        BlockPos blockpos = worldPosition.relative(direction, 1);
-        double d3 = blockpos.getX() + 0.5 * d1 + d2;
-        double d4 = blockpos.getY() + 0.5 + EntityType.ITEM.getHeight() / 2.0;
-        double d5 = blockpos.getZ() + 0.5 * d1 + d2;
-        ItemEntity entity = new ItemEntity(level, d3, d4, d5, fossil);
-        entity.setDeltaMovement(Vec3.ZERO);
-        level.addFreshEntity(entity);
     }
 }

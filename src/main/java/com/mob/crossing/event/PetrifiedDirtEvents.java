@@ -5,9 +5,11 @@ import com.mob.crossing.block.PetrifiedDirtBlock;
 import com.mob.crossing.block.PetrifiedDirtBlockEntity;
 import com.mob.crossing.block.PetrifiedDirtStage;
 import net.minecraft.core.BlockPos;
+import java.util.concurrent.ThreadLocalRandom;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.BrushItem;
@@ -53,8 +55,7 @@ public class PetrifiedDirtEvents {
         // Just set the visual state and start animation; ticker handles the counting
         level.setBlock(pos, state.setValue(BlockStateProperties.DUSTED, 1), 3);
         level.playSound(null, pos, SoundEvents.BRUSH_GENERIC, SoundSource.BLOCKS, 1.0F, 1.0F);
-        stack.hurtAndBreak(1, player, InteractionHand.MAIN_HAND.equals(event.getHand())
-                ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
+        stack.hurtAndBreak(1, player, InteractionHand.MAIN_HAND.equals(event.getHand()) ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
     }
 
     @SubscribeEvent
@@ -127,13 +128,25 @@ public class PetrifiedDirtEvents {
         stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 
         if (dirtEntity.getBrushCount() >= PetrifiedDirtBlockEntity.BRUSHES_REQUIRED) {
-            if (!level.isClientSide()) {
-                dirtEntity.spawnFossil();
-                level.setBlock(pos, state
-                        .setValue(PetrifiedDirtBlock.STAGE, PetrifiedDirtStage.HOLE)
-                        .setValue(BlockStateProperties.DUSTED, 0), 3);
-                level.levelEvent(3008, pos, net.minecraft.world.level.block.Block.getId(state));
+            int roll = ThreadLocalRandom.current().nextInt(96);
+            ItemStack drop = null;
+            if (roll < 50) {
+                drop = new ItemStack(MobCrossing.FOSSIL.get());
+            } else if (roll < 75) {
+                drop = new ItemStack(MobCrossing.BELL.get());
+            } else if (roll < 87) {
+                drop = new ItemStack(MobCrossing.BELL_BAG.get());
+            } else if (roll < 93) {
+                drop = new ItemStack(MobCrossing.MEDIUM_BELL_BAG.get());
+            } else {
+                drop = new ItemStack(MobCrossing.LARGE_BELL_BAG.get());
             }
+            if (drop != null) {
+                level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 1.5, pos.getZ() + 0.5, drop));
+            }
+            level.setBlock(pos, state.setValue(PetrifiedDirtBlock.STAGE, PetrifiedDirtStage.HOLE)
+                    .setValue(BlockStateProperties.DUSTED, 0), 3);
+            level.levelEvent(3008, pos, net.minecraft.world.level.block.Block.getId(state));
         }
     }
 }

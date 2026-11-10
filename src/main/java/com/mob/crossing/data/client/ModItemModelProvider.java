@@ -20,5 +20,13 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         // weed item model
         basicItem(MobCrossing.WEED_ITEM.get());
+
+        // bell item model
+        basicItem(MobCrossing.BELL.get());
+
+        // bell bag item models
+        basicItem(MobCrossing.BELL_BAG.get());
+        basicItem(MobCrossing.MEDIUM_BELL_BAG.get());
+        basicItem(MobCrossing.LARGE_BELL_BAG.get());
     }
 }

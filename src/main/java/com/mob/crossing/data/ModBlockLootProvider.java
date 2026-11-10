@@ -51,11 +51,18 @@ public class ModBlockLootProvider {
                                 )
                             )
                         );
+
+                        add(MobCrossing.PETRIFIED_DIRT.get(), LootTable.lootTable()
+                            .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(MobCrossing.PETRIFIED_DIRT.get()))
+                            )
+                        );
                     }
 
                     @Override
                     protected Iterable<Block> getKnownBlocks() {
-                        return Set.of(MobCrossing.WEED.get());
+                        return Set.of(MobCrossing.WEED.get(), MobCrossing.PETRIFIED_DIRT.get());
                     }
                 },
                 LootContextParamSets.BLOCK

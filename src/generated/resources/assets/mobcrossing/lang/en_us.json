@@ -1,7 +1,11 @@
 {
   "block.mobcrossing.petrified_dirt": "Petrified Dirt",
   "block.mobcrossing.weed": "Weed",
+  "item.mobcrossing.bell": "Bell",
   "item.mobcrossing.fossil": "Fossil",
+  "item.mobcrossing.large_bell_bag": "Large Bell Bag",
+  "item.mobcrossing.medium_bell_bag": "Medium Bell Bag",
+  "item.mobcrossing.small_bell_bag": "Small Bell Bag",
   "item.mobcrossing.weed": "Weed",
   "itemGroup.mobcrossing": "Mob Crossing"
 }

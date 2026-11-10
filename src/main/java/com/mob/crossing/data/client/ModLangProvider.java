@@ -20,6 +20,10 @@ public class ModLangProvider extends LanguageProvider {
         addBlockIfAbsent(MobCrossing.PETRIFIED_DIRT.get(), "Petrified Dirt");
         addBlockIfAbsent(MobCrossing.WEED.get(), "Weed");
         addItemIfAbsent(MobCrossing.FOSSIL.get(), "Fossil");
+        addItemIfAbsent(MobCrossing.BELL.get(), "Bell");
+        addItemIfAbsent(MobCrossing.BELL_BAG.get(), "Small Bell Bag");
+        addItemIfAbsent(MobCrossing.MEDIUM_BELL_BAG.get(), "Medium Bell Bag");
+        addItemIfAbsent(MobCrossing.LARGE_BELL_BAG.get(), "Large Bell Bag");
         addItemIfAbsent(MobCrossing.WEED_ITEM.get(), "Weed");
 
         addIfAbsent("itemGroup.mobcrossing", "Mob Crossing");

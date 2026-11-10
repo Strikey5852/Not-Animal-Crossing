@@ -11,7 +11,7 @@ import com.mob.crossing.block.WeedBlock;
 import com.mob.crossing.data.client.ModItemModelProvider;
 import com.mob.crossing.data.client.ModLangProvider;
 import com.mob.crossing.data.ModBlockLootProvider;
-import com.mob.crossing.item.FossilItem;
+import com.mob.crossing.data.ModBlockTagsProvider;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -47,7 +47,11 @@ public class MobCrossing {
 
     public static final DeferredBlock<PetrifiedDirtBlock> PETRIFIED_DIRT = BLOCKS.register("petrified_dirt", PetrifiedDirtBlock::new);
     public static final DeferredItem<BlockItem> PETRIFIED_DIRT_ITEM = ITEMS.registerSimpleBlockItem("petrified_dirt", PETRIFIED_DIRT);
-    public static final DeferredItem<Item> FOSSIL = ITEMS.register("fossil", FossilItem::new);
+    public static final DeferredItem<Item> FOSSIL = ITEMS.register("fossil", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BELL = ITEMS.register("bell", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BELL_BAG = ITEMS.register("small_bell_bag", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MEDIUM_BELL_BAG = ITEMS.register("medium_bell_bag", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> LARGE_BELL_BAG = ITEMS.register("large_bell_bag", () -> new Item(new Item.Properties()));
 
     public static final DeferredBlock<Block> WEED = BLOCKS.register("weed", WeedBlock::new);
     public static final DeferredItem<BlockItem> WEED_ITEM = ITEMS.registerSimpleBlockItem("weed", WEED);
@@ -62,6 +66,10 @@ public class MobCrossing {
             .displayItems((parameters, output) -> {
                 output.accept(PETRIFIED_DIRT_ITEM.get());
                 output.accept(FOSSIL.get());
+                output.accept(BELL.get());
+                output.accept(BELL_BAG.get());
+                output.accept(MEDIUM_BELL_BAG.get());
+                output.accept(LARGE_BELL_BAG.get());
                 output.accept(WEED_ITEM.get());
             }).build());
 
@@ -69,6 +77,8 @@ public class MobCrossing {
         modEventBus.addListener(this::commonSetup);
         // Data providers
         modEventBus.addListener(ModBlockLootProvider::onGatherData);
+        modEventBus.addListener((GatherDataEvent event) -> event.getGenerator().addProvider(true,
+            new ModBlockTagsProvider(event.getGenerator().getPackOutput(), event.getLookupProvider(), event.getExistingFileHelper())));
         modEventBus.addListener((GatherDataEvent event) -> event.getGenerator().addProvider(true,
             new ModItemModelProvider(event.getGenerator().getPackOutput(), event.getExistingFileHelper())));
         modEventBus.addListener((GatherDataEvent event) -> event.getGenerator().addProvider(true,
