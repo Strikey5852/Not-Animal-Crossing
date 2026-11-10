@@ -19,6 +19,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -52,6 +54,11 @@ public class MobCrossing {
     public static final DeferredItem<Item> BELL_BAG = ITEMS.register("small_bell_bag", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> MEDIUM_BELL_BAG = ITEMS.register("medium_bell_bag", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> LARGE_BELL_BAG = ITEMS.register("large_bell_bag", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CHERRY = ITEMS.register("cherry", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.4F).build())));
+    public static final DeferredItem<Item> COCONUT = ITEMS.register("coconut", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationModifier(0.6F).build())));
+    public static final DeferredItem<Item> ORANGE = ITEMS.register("orange", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.5F).build())));
+    public static final DeferredItem<Item> PEACH = ITEMS.register("peach", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.5F).build())));
+    public static final DeferredItem<Item> PEAR = ITEMS.register("pear", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationModifier(0.5F).build())));
 
     public static final DeferredBlock<Block> WEED = BLOCKS.register("weed", WeedBlock::new);
     public static final DeferredItem<BlockItem> WEED_ITEM = ITEMS.registerSimpleBlockItem("weed", WEED);
@@ -59,7 +66,7 @@ public class MobCrossing {
             -> net.minecraft.world.level.block.entity.BlockEntityType.Builder.of(PetrifiedDirtBlockEntity::new, PETRIFIED_DIRT.get())
             .build(null));
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CREATIVE_TAB = CREATIVE_MODE_TABS.register("mobcrossing_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.mobcrossing"))
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> WEED_ITEM.get().getDefaultInstance())
@@ -71,6 +78,12 @@ public class MobCrossing {
                 output.accept(MEDIUM_BELL_BAG.get());
                 output.accept(LARGE_BELL_BAG.get());
                 output.accept(WEED_ITEM.get());
+                output.accept(CHERRY.get());
+                output.accept(COCONUT.get());
+                output.accept(ORANGE.get());
+                output.accept(PEACH.get());
+                output.accept(PEAR.get());
+                output.accept(Items.APPLE);
             }).build());
 
     public MobCrossing(IEventBus modEventBus, ModContainer modContainer) {

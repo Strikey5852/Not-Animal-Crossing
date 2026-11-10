@@ -28,5 +28,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(MobCrossing.BELL_BAG.get());
         basicItem(MobCrossing.MEDIUM_BELL_BAG.get());
         basicItem(MobCrossing.LARGE_BELL_BAG.get());
+
+        // fruit item models
+        basicItem(MobCrossing.CHERRY.get());
+        basicItem(MobCrossing.COCONUT.get());
+        basicItem(MobCrossing.ORANGE.get());
+        basicItem(MobCrossing.PEACH.get());
+        basicItem(MobCrossing.PEAR.get());
     }
 }

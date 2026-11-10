@@ -25,6 +25,11 @@ public class ModLangProvider extends LanguageProvider {
         addItemIfAbsent(MobCrossing.MEDIUM_BELL_BAG.get(), "Medium Bell Bag");
         addItemIfAbsent(MobCrossing.LARGE_BELL_BAG.get(), "Large Bell Bag");
         addItemIfAbsent(MobCrossing.WEED_ITEM.get(), "Weed");
+        addItemIfAbsent(MobCrossing.CHERRY.get(), "Cherry");
+        addItemIfAbsent(MobCrossing.COCONUT.get(), "Coconut");
+        addItemIfAbsent(MobCrossing.ORANGE.get(), "Orange");
+        addItemIfAbsent(MobCrossing.PEACH.get(), "Peach");
+        addItemIfAbsent(MobCrossing.PEAR.get(), "Pear");
 
         addIfAbsent("itemGroup.mobcrossing", "Mob Crossing");
     }
