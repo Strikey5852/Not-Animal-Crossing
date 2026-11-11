@@ -1,6 +1,4 @@
 {
-  "ambientocclusion": false,
-  "render_type": "minecraft:cutout",
   "textures": {
     "particle": "mobcrossing:block/weed_stage0",
     "weed": "mobcrossing:block/weed_stage0"

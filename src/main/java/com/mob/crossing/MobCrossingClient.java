@@ -1,6 +1,5 @@
 package com.mob.crossing;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.neoforged.api.distmarker.Dist;
@@ -23,6 +22,14 @@ public class MobCrossingClient {
     static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             ItemBlockRenderTypes.setRenderLayer(MobCrossing.WEED.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MobCrossing.BLUE_ROSE.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MobCrossing.LILIE.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MobCrossing.PINK_WINDFLOWER.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MobCrossing.PURPLE_HYACINTH.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MobCrossing.RED_COSMOS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MobCrossing.WHITE_MUM.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MobCrossing.YELLOW_PANSIE.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(MobCrossing.YELLOW_TULIP.get(), RenderType.cutout());
         });
     }
 }
