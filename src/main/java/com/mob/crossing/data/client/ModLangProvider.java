@@ -19,12 +19,28 @@ public class ModLangProvider extends LanguageProvider {
     protected void addTranslations() {
         addBlockIfAbsent(MobCrossing.PETRIFIED_DIRT.get(), "Petrified Dirt");
         addBlockIfAbsent(MobCrossing.WEED.get(), "Weed");
+        addBlockIfAbsent(MobCrossing.BLUE_ROSE.get(), "Blue Rose");
+        addBlockIfAbsent(MobCrossing.LILIE.get(), "Lilie");
+        addBlockIfAbsent(MobCrossing.PINK_WINDFLOWER.get(), "Pink Windflower");
+        addBlockIfAbsent(MobCrossing.PURPLE_HYACINTH.get(), "Purple Hyacinth");
+        addBlockIfAbsent(MobCrossing.RED_COSMOS.get(), "Red Cosmos");
+        addBlockIfAbsent(MobCrossing.WHITE_MUM.get(), "White Mum");
+        addBlockIfAbsent(MobCrossing.YELLOW_PANSIE.get(), "Yellow Pansie");
+        addBlockIfAbsent(MobCrossing.YELLOW_TULIP.get(), "Yellow Tulip");
         addItemIfAbsent(MobCrossing.FOSSIL.get(), "Fossil");
         addItemIfAbsent(MobCrossing.BELL.get(), "Bell");
         addItemIfAbsent(MobCrossing.BELL_BAG.get(), "Small Bell Bag");
         addItemIfAbsent(MobCrossing.MEDIUM_BELL_BAG.get(), "Medium Bell Bag");
         addItemIfAbsent(MobCrossing.LARGE_BELL_BAG.get(), "Large Bell Bag");
         addItemIfAbsent(MobCrossing.WEED_ITEM.get(), "Weed");
+        addItemIfAbsent(MobCrossing.BLUE_ROSE_ITEM.get(), "Blue Rose");
+        addItemIfAbsent(MobCrossing.LILIE_ITEM.get(), "Lilie");
+        addItemIfAbsent(MobCrossing.PINK_WINDFLOWER_ITEM.get(), "Pink Windflower");
+        addItemIfAbsent(MobCrossing.PURPLE_HYACINTH_ITEM.get(), "Purple Hyacinth");
+        addItemIfAbsent(MobCrossing.RED_COSMOS_ITEM.get(), "Red Cosmos");
+        addItemIfAbsent(MobCrossing.WHITE_MUM_ITEM.get(), "White Mum");
+        addItemIfAbsent(MobCrossing.YELLOW_PANSIE_ITEM.get(), "Yellow Pansie");
+        addItemIfAbsent(MobCrossing.YELLOW_TULIP_ITEM.get(), "Yellow Tulip");
         addItemIfAbsent(MobCrossing.CHERRY.get(), "Cherry");
         addItemIfAbsent(MobCrossing.COCONUT.get(), "Coconut");
         addItemIfAbsent(MobCrossing.ORANGE.get(), "Orange");

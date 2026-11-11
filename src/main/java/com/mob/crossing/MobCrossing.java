@@ -8,6 +8,9 @@ import com.mob.crossing.block.PetrifiedDirtBlock;
 import com.mob.crossing.block.PetrifiedDirtBlockEntity;
 import com.mob.crossing.block.WeedBlock;
 
+import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.effect.MobEffects;
+
 import com.mob.crossing.data.client.ModItemModelProvider;
 import com.mob.crossing.data.client.ModLangProvider;
 import com.mob.crossing.data.ModBlockLootProvider;
@@ -23,7 +26,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -62,6 +68,47 @@ public class MobCrossing {
 
     public static final DeferredBlock<Block> WEED = BLOCKS.register("weed", WeedBlock::new);
     public static final DeferredItem<BlockItem> WEED_ITEM = ITEMS.registerSimpleBlockItem("weed", WEED);
+
+    public static final DeferredBlock<Block> BLUE_ROSE = BLOCKS.register("blue_rose", () -> new FlowerBlock(MobEffects.NIGHT_VISION, 0.4F, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .sound(SoundType.GRASS)
+            .noCollission()));
+    public static final DeferredItem<BlockItem> BLUE_ROSE_ITEM = ITEMS.registerSimpleBlockItem("blue_rose", BLUE_ROSE);
+    public static final DeferredBlock<Block> LILIE = BLOCKS.register("lilie", () -> new FlowerBlock(MobEffects.ABSORPTION, 0.4F, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .sound(SoundType.GRASS)
+            .noCollission()));
+    public static final DeferredItem<BlockItem> LILIE_ITEM = ITEMS.registerSimpleBlockItem("lilie", LILIE);
+    public static final DeferredBlock<Block> PINK_WINDFLOWER = BLOCKS.register("pink_windflower", () -> new FlowerBlock(MobEffects.JUMP, 0.4F, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .sound(SoundType.GRASS)
+            .noCollission()));
+    public static final DeferredItem<BlockItem> PINK_WINDFLOWER_ITEM = ITEMS.registerSimpleBlockItem("pink_windflower", PINK_WINDFLOWER);
+    public static final DeferredBlock<Block> PURPLE_HYACINTH = BLOCKS.register("purple_hyacinth", () -> new FlowerBlock(MobEffects.SLOW_FALLING, 0.4F, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .sound(SoundType.GRASS)
+            .noCollission()));
+    public static final DeferredItem<BlockItem> PURPLE_HYACINTH_ITEM = ITEMS.registerSimpleBlockItem("purple_hyacinth", PURPLE_HYACINTH);
+    public static final DeferredBlock<Block> RED_COSMOS = BLOCKS.register("red_cosmos", () -> new FlowerBlock(MobEffects.MOVEMENT_SPEED, 0.4F, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .sound(SoundType.GRASS)
+            .noCollission()));
+    public static final DeferredItem<BlockItem> RED_COSMOS_ITEM = ITEMS.registerSimpleBlockItem("red_cosmos", RED_COSMOS);
+    public static final DeferredBlock<Block> WHITE_MUM = BLOCKS.register("white_mum", () -> new FlowerBlock(MobEffects.HEALTH_BOOST, 0.4F, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .sound(SoundType.GRASS)
+            .noCollission()));
+    public static final DeferredItem<BlockItem> WHITE_MUM_ITEM = ITEMS.registerSimpleBlockItem("white_mum", WHITE_MUM);
+    public static final DeferredBlock<Block> YELLOW_PANSIE = BLOCKS.register("yellow_pansie", () -> new FlowerBlock(MobEffects.DAMAGE_RESISTANCE, 0.4F, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .sound(SoundType.GRASS)
+            .noCollission()));
+    public static final DeferredItem<BlockItem> YELLOW_PANSIE_ITEM = ITEMS.registerSimpleBlockItem("yellow_pansie", YELLOW_PANSIE);
+    public static final DeferredBlock<Block> YELLOW_TULIP = BLOCKS.register("yellow_tulip", () -> new FlowerBlock(MobEffects.REGENERATION, 0.4F, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.PLANT)
+            .sound(SoundType.GRASS)
+            .noCollission()));
+    public static final DeferredItem<BlockItem> YELLOW_TULIP_ITEM = ITEMS.registerSimpleBlockItem("yellow_tulip", YELLOW_TULIP);
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> PETRIFIED_DIRT_BLOCK_ENTITY = BLOCK_ENTITIES.register("petrified_dirt", ()
             -> net.minecraft.world.level.block.entity.BlockEntityType.Builder.of(PetrifiedDirtBlockEntity::new, PETRIFIED_DIRT.get())
             .build(null));
@@ -78,6 +125,14 @@ public class MobCrossing {
                 output.accept(MEDIUM_BELL_BAG.get());
                 output.accept(LARGE_BELL_BAG.get());
                 output.accept(WEED_ITEM.get());
+                output.accept(BLUE_ROSE_ITEM.get());
+                output.accept(LILIE_ITEM.get());
+                output.accept(PINK_WINDFLOWER_ITEM.get());
+                output.accept(PURPLE_HYACINTH_ITEM.get());
+                output.accept(RED_COSMOS_ITEM.get());
+                output.accept(WHITE_MUM_ITEM.get());
+                output.accept(YELLOW_PANSIE_ITEM.get());
+                output.accept(YELLOW_TULIP_ITEM.get());
                 output.accept(CHERRY.get());
                 output.accept(COCONUT.get());
                 output.accept(ORANGE.get());

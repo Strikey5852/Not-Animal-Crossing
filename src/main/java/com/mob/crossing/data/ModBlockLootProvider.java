@@ -52,6 +52,55 @@ public class ModBlockLootProvider {
                             )
                         );
 
+                        add(MobCrossing.BLUE_ROSE.get(), LootTable.lootTable()
+                            .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(MobCrossing.BLUE_ROSE.get()))
+                            )
+                        );
+                        add(MobCrossing.LILIE.get(), LootTable.lootTable()
+                            .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(MobCrossing.LILIE.get()))
+                            )
+                        );
+                        add(MobCrossing.PINK_WINDFLOWER.get(), LootTable.lootTable()
+                            .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(MobCrossing.PINK_WINDFLOWER.get()))
+                            )
+                        );
+                        add(MobCrossing.PURPLE_HYACINTH.get(), LootTable.lootTable()
+                            .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(MobCrossing.PURPLE_HYACINTH.get()))
+                            )
+                        );
+                        add(MobCrossing.RED_COSMOS.get(), LootTable.lootTable()
+                            .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(MobCrossing.RED_COSMOS.get()))
+                            )
+                        );
+                        add(MobCrossing.WHITE_MUM.get(), LootTable.lootTable()
+                            .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(MobCrossing.WHITE_MUM.get()))
+                            )
+                        );
+                        add(MobCrossing.YELLOW_PANSIE.get(), LootTable.lootTable()
+                            .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(MobCrossing.YELLOW_PANSIE.get()))
+                            )
+                        );
+                        add(MobCrossing.YELLOW_TULIP.get(), LootTable.lootTable()
+                            .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(MobCrossing.YELLOW_TULIP.get()))
+                            )
+                        );
+
                         add(MobCrossing.PETRIFIED_DIRT.get(), LootTable.lootTable()
                             .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
@@ -62,7 +111,10 @@ public class ModBlockLootProvider {
 
                     @Override
                     protected Iterable<Block> getKnownBlocks() {
-                        return Set.of(MobCrossing.WEED.get(), MobCrossing.PETRIFIED_DIRT.get());
+                        return Set.of(MobCrossing.WEED.get(), MobCrossing.BLUE_ROSE.get(), MobCrossing.LILIE.get(),
+                            MobCrossing.PINK_WINDFLOWER.get(), MobCrossing.PURPLE_HYACINTH.get(), MobCrossing.RED_COSMOS.get(),
+                            MobCrossing.WHITE_MUM.get(), MobCrossing.YELLOW_PANSIE.get(), MobCrossing.YELLOW_TULIP.get(),
+                            MobCrossing.PETRIFIED_DIRT.get());
                     }
                 },
                 LootContextParamSets.BLOCK

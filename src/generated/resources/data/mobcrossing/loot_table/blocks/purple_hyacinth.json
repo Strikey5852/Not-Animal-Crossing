@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "mobcrossing:purple_hyacinth"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "mobcrossing:blocks/purple_hyacinth"
+}

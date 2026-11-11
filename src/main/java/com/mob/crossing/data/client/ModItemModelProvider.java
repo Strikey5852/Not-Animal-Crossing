@@ -21,6 +21,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         // weed item model
         basicItem(MobCrossing.WEED_ITEM.get());
 
+        // flower item models
+        basicItem(MobCrossing.BLUE_ROSE_ITEM.get());
+        basicItem(MobCrossing.LILIE_ITEM.get());
+        basicItem(MobCrossing.PINK_WINDFLOWER_ITEM.get());
+        basicItem(MobCrossing.PURPLE_HYACINTH_ITEM.get());
+        basicItem(MobCrossing.RED_COSMOS_ITEM.get());
+        basicItem(MobCrossing.WHITE_MUM_ITEM.get());
+        basicItem(MobCrossing.YELLOW_PANSIE_ITEM.get());
+        basicItem(MobCrossing.YELLOW_TULIP_ITEM.get());
+
         // bell item model
         basicItem(MobCrossing.BELL.get());
 
